@@ -1,0 +1,19 @@
+body {
+    font-family: 'Courier New';
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.header__title {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+}
+
+.main__container {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+}

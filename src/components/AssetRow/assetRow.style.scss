@@ -1,0 +1,19 @@
+.asset__row__container{
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(205, 222, 238);
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    &:hover{
+        background-color: rgb(160, 200, 238);
+    }
+}
+
+.asset__row__element{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
