@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# Crypto Portfolio Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это приложение для отслеживания портфеля криптовалют в реальном времени. Оно позволяет добавлять криптовалюты в портфолио, обновлять их цены через WebSocket и удалять активы. Приложение построено на React, TypeScript и Redux Toolkit.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Основные функции
 
-## Expanding the ESLint configuration
+- Отслеживание цен в реальном времени: Используется WebSocket для получения данных о ценах криптовалют.
+- Добавление активов: Пользователь может добавлять криптовалюты в портфолио.
+- Удаление активов: Пользователь может удалять криптовалюты из портфолио.
+- Расчет общей стоимости: Автоматически рассчитывается общая стоимость портфолио.
+- Процентная доля: Для каждого актива рассчитывается его доля в портфолио.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Технологии
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React: Библиотека для построения пользовательского интерфейса.
+- TypeScript: Добавляет статическую типизацию в JavaScript.
+- Redux Toolkit: Управление состоянием приложения.
+- WebSocket: Для получения данных о ценах в реальном времени.
+- SCSS: Стилизация компонентов.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+  
+   git clone https://github.com/Bullbazawr/PortfolioOverview.git
+   cd PortfolioOverview
+   
+2. Установите зависимости:
+  
+   npm install
+   
+3. Запустите приложение:
+  
+   npm run dev
+   
+4. Откройте в браузере:
+   Перейдите по адресу (http://localhost:5173/).
+
+---
+
+## Структура проекта
+
+src/
+├── components/          # Компоненты React
+        ├──AddAssetForm
+              ├──addAssetForm.style.scss
+              ├──AddAssetForm.tsx
+        ├──App
+              ├──App.style.scss
+              ├──App.tsx
+        ├──AssetRow
+              ├──AssetRow.style.scss
+              ├──AssetRow.tsx
+        ├──AssetsList
+              ├──AssetsList.style.scss
+              ├──AssetsList.tsx
+├── services/            # Логика для работы WebSocket
+      ├── socket.ts       
+├── store/               # Redux хранилище и редьюсеры типы    
+      ├── cryptoSlice.ts
+      ├── store.ts
+├── index.css
+├── main.tsx
+---
+
+## Примеры использования
+
+### Добавление криптовалюты
+
+1. На главной странице отображается список доступных криптовалют.
+2. Нажмите кнопку "добавить" рядом с криптовалютой.
+3. Если нужно увеличить количество валюты нажмите добавить еще разю
+
+### Удаление криптовалюты
+
+1. В разделе "Portfolio" нажмите на  криптовалюту, которую хотите удалить.
+
+---
+
+
+
+## Ссылки
+
+- [Демо](https://portfolio-overview-hazel.vercel.app/)
