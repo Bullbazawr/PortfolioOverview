@@ -48,25 +48,45 @@
 
 src/
 ├── components/          # Компоненты React
+
         ├──AddAssetForm
+        
               ├──addAssetForm.style.scss
+              
               ├──AddAssetForm.tsx
+              
         ├──App
+        
               ├──App.style.scss
+              
               ├──App.tsx
+              
         ├──AssetRow
+        
               ├──AssetRow.style.scss
+              
               ├──AssetRow.tsx
+              
         ├──AssetsList
+        
               ├──AssetsList.style.scss
+              
               ├──AssetsList.tsx
+              
 ├── services/            # Логика для работы WebSocket
+
       ├── socket.ts       
-├── store/               # Redux хранилище и редьюсеры типы    
+      
+├── store/               # Redux хранилище и редьюсеры типы   
+
       ├── cryptoSlice.ts
+      
       ├── store.ts
+      
 ├── index.css
+
 ├── main.tsx
+
 ---
 
 ## Примеры использования
